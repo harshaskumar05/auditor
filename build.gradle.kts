@@ -44,11 +44,11 @@ subprojects {
     }
 
     // compile
-    java.sourceCompatibility = JavaVersion.VERSION_17
+    java.sourceCompatibility = JavaVersion.VERSION_21
 
     tasks.withType<KotlinCompile> {
         kotlinOptions {
-            jvmTarget = "17"
+            jvmTarget = "21"
             languageVersion = "1.9"
             freeCompilerArgs = listOf("-opt-in=kotlin.RequiresOptIn")
         }
@@ -105,7 +105,7 @@ subprojects {
 
     tasks {
         withType<Detekt> {
-            this.jvmTarget = "14"
+            this.jvmTarget = "21"
             reports {
                 // observe findings in your browser with structure and code snippets
                 html.required.set(true)
@@ -121,7 +121,7 @@ subprojects {
 
     // jacoco
     jacoco {
-        toolVersion = "0.8.7"
+        toolVersion = "0.8.12"
     }
 
     tasks.jacocoTestReport {
